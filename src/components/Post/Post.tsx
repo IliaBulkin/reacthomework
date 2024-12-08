@@ -4,11 +4,12 @@ export interface IPostProps {
     header: string,
     description: string, 
     image: string,
-    author: string
+    author: string,
+    category: string
 }
 
 export function Post(props: IPostProps) {
-    const [likeRep, setLikeRep] = useState(0)
+    // const [likeRep, setLikeRep] = useState(0)
 
     const [like, setLike] = useState(false)
     const [likePhoto, setLikePhoto] = useState('https://icons.veryicon.com/png/o/commerce-shopping/evaluation-interface-of-sanfu-official-mall/icon-like-2.png')
@@ -26,17 +27,17 @@ export function Post(props: IPostProps) {
     }
 
 
-    function likeTrue() {
-        if (likeRep == 0 && likeRep <= 1) {
-            setLikeRep(likeRep+1)
-        }
-    }
+    // function likeTrue() {
+    //     if (likeRep == 0 && likeRep <= 1) {
+    //         setLikeRep(likeRep+1)
+    //     }
+    // }
 
-    function likeFalse() {
-        if (likeRep == 1) {
-            setLikeRep(likeRep-1)
-        }
-    }
+    // function likeFalse() {
+    //     if (likeRep == 1) {
+    //         setLikeRep(likeRep-1)
+    //     }
+    // }
 
 
     const imgStyles = {
@@ -54,9 +55,10 @@ export function Post(props: IPostProps) {
 
             <button style={buttonStyles} id="likeButton" onClick={likeyoo}><img style={imgStyles} src={likePhoto} alt="like no yoo"/></button>
 
-            <h3>test like {likeRep}</h3>
+            {/* <h3>test like {likeRep}</h3>
             <button onClick={likeTrue}>+repLike</button>
-            <button onClick={likeFalse}>-repLike</button>
+            <button onClick={likeFalse}>-repLike</button> */}
+
         </div>
     )
 }

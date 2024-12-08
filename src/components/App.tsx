@@ -1,4 +1,4 @@
-import { PostList } from './PostList'
+import { PostList } from './PostList/PostList'
 
 export function App() {
     return(
@@ -12,4 +12,3 @@ export function App() {
         </div>
     )
 }
-
