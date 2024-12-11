@@ -1,9 +1,10 @@
 import { useState } from "react"
 
 export interface IPostProps {
+    id: number,
     header: string,
     description: string, 
-    image: string,
+    social_image: string,
     author: string,
     category: string
 }
@@ -42,7 +43,7 @@ export function Post(props: IPostProps) {
 
     const imgStyles = {
         width: "30px"
-      };
+    };
     const buttonStyles = {
         border: "0px"
     }
@@ -50,7 +51,7 @@ export function Post(props: IPostProps) {
         <div id="post">
             <h1>{props.header}</h1>
             <p>{props.description}</p>
-            <img src={props.image} alt="props.image" />
+            <img src={props.social_image} alt="props.image" />
             <p>{props.author}</p>
 
             <button style={buttonStyles} id="likeButton" onClick={likeyoo}><img style={imgStyles} src={likePhoto} alt="like no yoo"/></button>
