@@ -18,7 +18,7 @@ export function App(){
                 <Routes>
                     <Route path="/" element={<Layout></Layout>}>
                         <Route path="/PostList" element={<PostList></PostList>}></Route>
-                        <Route path="/post/:id" element={<PostPage></PostPage>}></Route>
+                        <Route path="/PostList/:id" element={<PostPage></PostPage>}></Route>
                     </Route>
                 </Routes>
             </BrowserRouter>

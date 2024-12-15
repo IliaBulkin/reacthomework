@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export interface IPostProps {
     id: number,
@@ -15,12 +16,12 @@ export function Post(props: IPostProps) {
     const [like, setLike] = useState(false)
     const [likePhoto, setLikePhoto] = useState('https://icons.veryicon.com/png/o/commerce-shopping/evaluation-interface-of-sanfu-official-mall/icon-like-2.png')
     function likeyoo() {
-        if (like == false) {
+        if (like === false) {
             setLike(true)
             setLikePhoto('https://icons.veryicon.com/png/o/miscellaneous/yuanql/icon-like.png')
             console.log('like true')
         }
-        if (like == true) {
+        if (like === true) {
             setLike(false)
             setLikePhoto('https://icons.veryicon.com/png/o/commerce-shopping/evaluation-interface-of-sanfu-official-mall/icon-like-2.png')
             console.log('like false')
@@ -49,17 +50,21 @@ export function Post(props: IPostProps) {
     }
     return (
         <div id="post">
-            <h1>{props.header}</h1>
-            <p>{props.description}</p>
-            <img src={props.social_image} alt="props.image" />
-            <p>{props.author}</p>
-
+            <br />
+            <hr />
+            <Link className="post" to={`/PostList/${props.id}`}>
+                <h1>{props.header}</h1>
+                <p>{props.description}</p>
+                <img src={props.social_image} alt="props.image" />
+                <p>{props.author}</p>
+            </Link>
             <button style={buttonStyles} id="likeButton" onClick={likeyoo}><img style={imgStyles} src={likePhoto} alt="like no yoo"/></button>
 
             {/* <h3>test like {likeRep}</h3>
             <button onClick={likeTrue}>+repLike</button>
             <button onClick={likeFalse}>-repLike</button> */}
-
+            
+            <hr />
         </div>
     )
 }
