@@ -1,7 +1,7 @@
-import { PostList } from "./pages/MainPage/PostList/PostList"
-import { Layout } from "./shared/Layout/Layout"
+import { PostList } from "./PostList/PostList"
+import { Layout } from "./Layout/Layout"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { PostPage } from "./pages/PostsPage/PostPage/PostPage"
+import { PostPage } from "../pages/PostPage/PostPage"
 
 export function App(){
     return (

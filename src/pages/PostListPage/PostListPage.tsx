@@ -1,4 +1,4 @@
-import { PostList } from "../../MainPage/PostList/PostList"
+import { PostList } from "../../shared/PostList/PostList"
 
 export function PostListPage() {
     return (

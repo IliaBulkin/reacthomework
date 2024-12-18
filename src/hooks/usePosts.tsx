@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { IPostProps } from "../pages/PostsPage/Post/Post";
+import { IPostProps } from "../shared/PostList/PostCard/Post";
 
 export function usePosts() {
     const [posts, setPosts] = useState<IPostProps[]>([]);

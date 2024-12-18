@@ -1,5 +1,5 @@
-import { Post } from "../../PostsPage/Post/Post";
-import { usePosts } from "../../../hooks/usePosts";
+import { Post } from "../PostList/PostCard/Post";
+import { usePosts } from "../../hooks/usePosts";
 import { useState } from "react";
 
 export function PostList() {
