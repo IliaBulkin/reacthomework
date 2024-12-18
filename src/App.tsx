@@ -1,10 +1,7 @@
-import { PostList } from "./PostList/PostList"
-import { Layout } from "./Layout/Layout"
-import { Header } from "./Header/Header"
-import { Footer } from "./Footer/Footer"
-import { Main} from './Main/Main'
+import { PostList } from "./pages/MainPage/PostList/PostList"
+import { Layout } from "./shared/Layout/Layout"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { PostPage } from "./PostPage/PostPage"
+import { PostPage } from "./pages/PostsPage/PostPage/PostPage"
 
 export function App(){
     return (
