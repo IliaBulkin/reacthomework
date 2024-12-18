@@ -2,8 +2,10 @@ import { PostList } from "./PostList/PostList"
 import { Layout } from "./Layout/Layout"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { PostPage } from "../pages/PostPage/PostPage"
+import { useTitle } from "../hooks/useTitle"
 
 export function App(){
+    useTitle('Абоба заголовок')
     return (
         <div id="8chan">
             <h1>Форум 8chan</h1>
