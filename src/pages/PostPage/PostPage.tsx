@@ -41,7 +41,7 @@ export function PostPage() {
                     <div id="tagsOfPost">
                         <h2 id="tagsTitle">tags:</h2>
                         {post.tags.map((tag, index) => {
-                            return <p key={index}>{tag}</p>;
+                            return <p key={index}>{tag}</p>; // проблема с ключем, ручные посты не загружаются, ошибка маппинга
                         })}
                     </div>
                     <div id="bodyMarkdown">

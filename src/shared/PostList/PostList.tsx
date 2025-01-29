@@ -28,6 +28,9 @@ export function PostList() {
                     social_image={post.social_image}
                     author={post.author}
                     category={post.category}
+                    title={post.title}
+                    content={post.content}
+                    date={post.date}
                 />
             ))}
         </div>

@@ -6,11 +6,15 @@ import { useTitle } from "../hooks/useTitle";
 import { createContext, useState } from "react";
 
 export interface IPostProps {
-    id: number;
-    title: string;
-    content: string;
-    author: string;
-    date: string;
+    id: number
+    header: string
+    description: string
+    social_image: string
+    author: string
+    category: string
+    title: string   
+    content: string   
+    date: string   
 }
 
 interface ILikeContext {
@@ -18,7 +22,7 @@ interface ILikeContext {
     toggleLike: (post: IPostProps) => void; 
 }
 
-const LikeContext = createContext<ILikeContext | null>(null);
+export const LikeContext = createContext<ILikeContext | null>(null);
 
 export function App() {
     useTitle("Абоба заголовок");
