@@ -1,6 +1,6 @@
-import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import { LikeContext } from "../../App"; 
+import { useContext } from "react"
+import { Link } from "react-router-dom"
+import { LikeContext } from "../../../context/postContext"
 
 export interface IPostProps {
     id: number
@@ -15,21 +15,7 @@ export interface IPostProps {
 }
 
 export function Post(props: IPostProps) {
-    // без ! будет ругаться на возможный null
     const { likedPosts, toggleLike } = useContext(LikeContext)!
-
-    const isLiked = likedPosts.some((post) => post.id === props.id);
-
-    const imgStyles = {
-        width: "30px",
-    }
-    const buttonStyles = {
-        border: "0px",
-    }
-
-    const handleLikeClick = () => {
-        toggleLike(props); 
-    };
 
     return (
         <div id="post">
@@ -41,11 +27,11 @@ export function Post(props: IPostProps) {
                 <img src={props.social_image} alt="props.image" />
                 <p>{props.author}</p>
             </Link>
-            <button style={buttonStyles} id="likeButton" onClick={handleLikeClick}>
-                <img style={imgStyles} src={
-                        isLiked ? "https://icons.veryicon.com/png/o/miscellaneous/yuanql/icon-like.png" 
-                        : "https://icons.veryicon.com/png/o/commerce-shopping/evaluation-interface-of-sanfu-official-mall/icon-like-2.png"
-                    } alt="like no yoo" />
+            <button onClick={() => toggleLike(props)}>
+                <img 
+                    src="https://icons.veryicon.com/png/o/miscellaneous/yuanql/icon-like.png" 
+                    alt="like"
+                />
             </button>
             <hr />
         </div>
