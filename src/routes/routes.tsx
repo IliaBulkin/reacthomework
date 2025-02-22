@@ -1,8 +1,9 @@
 import { PostPage } from "../pages/PostPage/PostPage";
-import { useTitle } from "../hooks/useTitle";
 import { PostList } from "../shared/PostList/PostList";
 import { Layout } from "../shared/Layout/Layout";
 import { LikedPosts } from '../pages/LikedPostPage/LikedPostPage'
+import { LoginPage } from "../pages/LoginPage/LoginPage";
+import { RegisterPage } from "../pages/RegisterPage/RegisterPage"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -14,6 +15,8 @@ export function AppRoutes() {
                 <Route path="/PostList" element={<PostList />} />
                 <Route path="/PostList/:id" element={<PostPage />} />
                 <Route path="/likedPosts" element={<LikedPosts />} />
+                <Route path='/login' element={<LoginPage></LoginPage>}></Route>
+                <Route path='/register' element={<RegisterPage></RegisterPage>}></Route>
             </Route>
         </Routes>
     </BrowserRouter>
