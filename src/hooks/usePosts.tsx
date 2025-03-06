@@ -3,6 +3,7 @@ import { IPostProps } from "../shared/PostList/PostCard/Post";
 
 export function usePosts() {
     const [posts, setPosts] = useState<IPostProps[]>([]);
+    // обработка ошибки и загрузки??
 
     useEffect(() => {
         async function fetchPosts() {
@@ -41,7 +42,7 @@ export function usePosts() {
                     category: "Rofls"
                 },
             ];
-
+            // переделать на свое API дз 16
             try {
                 const apiPosts = await fetch("https://dev.to/api/articles");
                 const response = await apiPosts.json();

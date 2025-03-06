@@ -23,7 +23,7 @@ export function RegisterPage() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
             });
-
+            // ох где вы это накопировали...
             const result: ISuccess<IUser> | IError = await res.json()
 
             if (result.status === "success") {

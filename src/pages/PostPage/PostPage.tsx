@@ -13,8 +13,9 @@ export function PostPage() {
     })
     const params = useParams()
     const [isLoading, setIsLoading] = useState(true)
+    // ???
     const { posts } = usePosts()
-
+    // должно быть в хуке usePostById 
     useEffect(() => {
         async function getAllPosts() {
             setIsLoading(true)
@@ -41,6 +42,8 @@ export function PostPage() {
                     <div id="tagsOfPost">
                         <h2 id="tagsTitle">tags:</h2>
                         {post.tags.map((tag, index) => {
+                            // для мапа 10 раз говорил не использовать индекс элемента в  массиве!
+                            // используй хотя бы название тега в key
                             return <p key={index}>{tag}</p>; // проблема с ключем, ручные посты не загружаются, ошибка маппинга
                         })}
                     </div>

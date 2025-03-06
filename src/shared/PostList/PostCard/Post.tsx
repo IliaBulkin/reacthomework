@@ -15,10 +15,12 @@ export interface IPostProps {
 }
 
 export function Post(props: IPostProps) {
+    // likedPosts не используешь. Вместо useContext лучше сделать свой хук на получение контекста
     const { likedPosts, toggleLike } = useContext(LikeContext)!
 
     return (
         <div id="post">
+            {/* стилями это лучше сделать! */}
             <br />
             <hr />
             <Link className="post" to={`/PostList/${props.id}`}>

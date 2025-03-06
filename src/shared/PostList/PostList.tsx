@@ -3,9 +3,12 @@ import { usePosts } from "../../hooks/usePosts";
 import { useState } from "react";
 
 export function PostList() {
+    // loading и error
     const { posts } = usePosts(); 
     const [selectedCategory, setSelectedCategory] = useState("All");
-
+    // ??? отработает один раз
+    // фильтрации в принципе нет
+    // должен использовать хук useEffect
     const filteredProducts = selectedCategory === "All"
         ? posts
         : posts.filter((post) => post.category === selectedCategory);
@@ -13,6 +16,7 @@ export function PostList() {
     return (
         <div>
             <select onChange={(event) => setSelectedCategory(event.target.value)}>
+                {/* все категории берем из API */}
                 <option value="All">Все посты</option>
                 <option value="Money">Деньги</option>
                 <option value="Psychology">Психология</option>
@@ -21,6 +25,7 @@ export function PostList() {
 
             {filteredProducts.map((post) => (
                 <Post
+                // у тебя такого нет в интерфейсе поста, меняем
                     key={post.id}
                     id={post.id}
                     header={post.header}

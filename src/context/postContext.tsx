@@ -1,5 +1,9 @@
+// React не импортируем
 import React, { createContext, useState, ReactNode } from "react"
 
+// За Названиями переменных контекста следи, где то LikeContext, где то PostContext
+
+// это не Props, и интерфейс поста лучше брать из types
 export interface IPostProps {
     id: number
     header: string
@@ -16,9 +20,11 @@ export interface ILikeContext {
     likedPosts: IPostProps[]
     toggleLike: (post: IPostProps) => void
 }
-
+// Экспортировать контекст не надо
 export const LikeContext = createContext<ILikeContext | null>(null)
+// Лучше сделать хук, который будет возвращать useContext(LikeContext)
 
+// Это провайдер
 export function PostContext({ children }: { children: ReactNode }) {
     const [likedPosts, setLikedPosts] = useState<IPostProps[]>([])
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+// ничего не понял
+// usePostById занимается черт пойми чем
 export function usePostById() {
     const [like, setLike] = useState(false);
     const [likePhoto, setLikePhoto] = useState(

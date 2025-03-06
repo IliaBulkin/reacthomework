@@ -3,6 +3,7 @@ import { LikeContext } from "../../context/postContext"
 import { IPostProps } from "../../context/postContext"
 
 export function LikedPosts() {
+    // toggleLike не используешь
     const { likedPosts, toggleLike } = useContext(LikeContext)!
     return (
         <div>
