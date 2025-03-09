@@ -1,14 +1,19 @@
 import { Post } from "../PostList/PostCard/Post";
 import { usePosts } from "../../hooks/usePosts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function PostList() {
     const { posts } = usePosts(); 
     const [selectedCategory, setSelectedCategory] = useState("All");
+    const [filteredProducts, setFilteredProducts] = useState(posts);
 
-    const filteredProducts = selectedCategory === "All"
-        ? posts
-        : posts.filter((post) => post.category === selectedCategory);
+    useEffect(() => {
+        setFilteredProducts(
+            selectedCategory === "All"
+                ? posts
+                : posts.filter((post) => post.category === selectedCategory)
+        );
+    }, [selectedCategory, posts]);
 
     return (
         <div>
@@ -21,7 +26,6 @@ export function PostList() {
 
             {filteredProducts.map((post) => (
                 <Post
-                    key={post.id}
                     id={post.id}
                     header={post.header}
                     description={post.description}

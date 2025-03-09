@@ -1,9 +1,9 @@
 import { useContext } from "react"
 import { LikeContext } from "../../context/postContext"
-import { IPostProps } from "../../context/postContext"
+import { IPostProps } from "../../shared/types/types";
 
 export function LikedPosts() {
-    const { likedPosts, toggleLike } = useContext(LikeContext)!
+    const { likedPosts } = useContext(LikeContext)!
     return (
         <div>
             {likedPosts.map((post: IPostProps) => { 

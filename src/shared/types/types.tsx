@@ -31,3 +31,21 @@ export interface IUser {
     password: string
     role: "user" | "admin"
 }
+
+
+export interface IPostProps {
+    id: number
+    header: string
+    description: string
+    social_image: string
+    author: string
+    category: string
+    title: string   
+    content: string   
+    date: string
+}
+
+export interface ILikeContext {
+    likedPosts: IPostProps[]
+    toggleLike: (post: IPostProps) => void
+}

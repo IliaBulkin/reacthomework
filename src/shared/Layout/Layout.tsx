@@ -1,21 +1,15 @@
-import { ReactNode } from "react"
 import { Header } from "../Header/Header"
-import { Main } from "../Main/Main"
-import { PostList } from "../PostList/PostList"
 import { Footer } from "../Footer/Footer"
 import { Outlet } from "react-router-dom"
+import { MainPageComponent } from "../MainPage/MainPageComponent"
 
-interface ILayoutProps {
-    children?: ReactNode
-}
-
-export function Layout(props: ILayoutProps){
+export function Layout(){
     return (
         <div className="layout">
             <Header></Header>
-            <Main>
+            <MainPageComponent>
                 <Outlet />
-            </Main>
+            </MainPageComponent>
             <Footer></Footer>
         </div>
     )

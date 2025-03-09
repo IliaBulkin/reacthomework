@@ -1,25 +1,9 @@
-import React, { createContext, useState, ReactNode } from "react"
-
-export interface IPostProps {
-    id: number
-    header: string
-    description: string
-    social_image: string
-    author: string
-    category: string
-    title: string   
-    content: string   
-    date: string
-}
-
-export interface ILikeContext {
-    likedPosts: IPostProps[]
-    toggleLike: (post: IPostProps) => void
-}
+import { createContext, useState, ReactNode } from "react"
+import { IPostProps, ILikeContext } from "../shared/types/types"
 
 export const LikeContext = createContext<ILikeContext | null>(null)
 
-export function PostContext({ children }: { children: ReactNode }) {
+export function PostContextProvider({ children }: { children: ReactNode }) {
     const [likedPosts, setLikedPosts] = useState<IPostProps[]>([])
 
     const toggleLike = (post: IPostProps) => {

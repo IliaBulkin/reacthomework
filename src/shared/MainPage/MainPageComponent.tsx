@@ -4,7 +4,8 @@ interface IMainProps {
     children?: ReactNode
 }
 
-export function Main(props: IMainProps) {
+export function MainPageComponent(props: IMainProps) {
+    // useTitle
     return (
         <div className = "Main">
             {props.children}
@@ -12,3 +13,4 @@ export function Main(props: IMainProps) {
         </div>
     )
 }
+
