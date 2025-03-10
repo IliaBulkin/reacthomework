@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-
 import { ISuccess, IError, IUser } from "../../shared/types/types";
 
 import "./LoginPage.css";
@@ -47,7 +46,7 @@ export function LoginPage() {
     ) : (
         <div className="loginPage">
             <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
-                <h1 style={{ color: "white" }}>Login</h1>
+                <h1>Login</h1>
                 <div className="inputsForm">
                     <div className="inputDiv">
                         <input className="inputTextForm" placeholder="Email" type="text" {...register("email", {

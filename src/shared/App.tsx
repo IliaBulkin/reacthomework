@@ -1,4 +1,3 @@
-import { useTitle } from "../hooks/useTitle";
 import { PostContextProvider } from '../context/postContext';
 import { AppRoutes } from '../routes/routes';
 

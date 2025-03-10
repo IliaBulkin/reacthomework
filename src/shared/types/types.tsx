@@ -32,7 +32,6 @@ export interface IUser {
     role: "user" | "admin"
 }
 
-
 export interface IPostProps {
     id: number
     header: string

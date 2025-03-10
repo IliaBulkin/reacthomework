@@ -1,11 +1,13 @@
 import { Post } from "../PostList/PostCard/Post";
 import { usePosts } from "../../hooks/usePosts";
 import { useEffect, useState } from "react";
+import { useTags } from "../../hooks/useTags"
 
 export function PostList() {
     const { posts } = usePosts(); 
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [filteredProducts, setFilteredProducts] = useState(posts);
+    const { tags } = useTags();
 
     useEffect(() => {
         setFilteredProducts(
@@ -17,11 +19,18 @@ export function PostList() {
 
     return (
         <div>
-            <select onChange={(event) => setSelectedCategory(event.target.value)}>
-                <option value="All">Все посты</option>
-                <option value="Money">Деньги</option>
-                <option value="Psychology">Психология</option>
-                <option value="Rofls">Шутки</option>
+            <select
+                name="tags"
+                id="mainselect"
+                onChange={(event) => setSelectedCategory(event.target.value)}
+                value={selectedCategory}
+            >
+                <option value="All">All</option>
+                {tags.map((tag) => (
+                    <option key={tag.name} value={tag.name}>
+                        {tag.name}
+                    </option>
+                ))}
             </select>
 
             {filteredProducts.map((post) => (

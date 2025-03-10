@@ -6,5 +6,4 @@ export function Footer(){
             <p>футер</p>
         </footer>
     )
-    
 }

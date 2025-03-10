@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom"
 import "./PostPage.css"
 import { useEffect, useState } from "react"
-import { usePosts } from "../../hooks/usePosts"
 
 export function PostPage() {
     const [post, setPost] = useState({
@@ -13,7 +12,6 @@ export function PostPage() {
     })
     const params = useParams()
     const [isLoading, setIsLoading] = useState(true)
-    const { posts } = usePosts()
 
     useEffect(() => {
         async function getAllPosts() {
