@@ -14,6 +14,7 @@ export function usePostById(id: number){
     let [receivedPost, setReceivedPost] = useState<IPost>();
     let [isLoading, setIsLoading] = useState<boolean>(false);
     let [error, setError] = useState<string>();
+    
     useEffect(() => {
         async function getArticleById(){
             try{

@@ -14,7 +14,7 @@ export interface IPostProps {
     date: string  
 }
 
-export function usePostById() {
+export function useToggleLike() {
     const [like, setLike] = useState(false);
     const [likePhoto, setLikePhoto] = useState(
         "https://icons.veryicon.com/png/o/commerce-shopping/evaluation-interface-of-sanfu-official-mall/icon-like-2.png"
@@ -39,8 +39,6 @@ export function usePostById() {
 
 export function Post(props: IPostProps) {
     const { likedPosts, toggleLike } = useContext(LikeContext)!
-    
-
     
     return (
         <div id="post">
