@@ -2,6 +2,14 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { LikeContext } from "../../../context/postContext"
 
+export interface IComment{
+    id: number;
+    title: string;
+    body: string;
+    userId: number;
+    postId: number;
+}
+
 export interface IPostProps {
     id: number
     header: string
@@ -11,7 +19,8 @@ export interface IPostProps {
     category: string
     title: string 
     content: string 
-    date: string  
+    date: string 
+    comments?: IComment[]
 }
 
 export function useToggleLike() {

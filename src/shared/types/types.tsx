@@ -8,6 +8,8 @@ export interface ISuccess<T> {
     data: T
 }
 
+export type Response<T> = IError | ISuccess<T>
+
 export interface IPost {
     id: number
     name: string

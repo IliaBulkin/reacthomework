@@ -5,6 +5,7 @@ import { LikedPosts } from '../pages/LikedPostPage/LikedPostPage'
 import { LoginPage } from "../pages/LoginPage/LoginPage";
 import { RegisterPage } from "../pages/RegisterPage/RegisterPage"
 import { PostListPage } from "../pages/PostListPage/PostListPage"
+import { UserPage } from "../pages/UserPage/UserPage";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -19,6 +20,7 @@ export function AppRoutes() {
                 <Route path="/likedPosts" element={<LikedPosts />} />
                 <Route path='/login' element={<LoginPage></LoginPage>}></Route>
                 <Route path='/register' element={<RegisterPage></RegisterPage>}></Route>
+                <Route path="/user" element={<UserPage></UserPage>}></Route>
             </Route>
         </Routes>
     </BrowserRouter>
